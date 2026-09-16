@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@600;700&display=swap");
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-navy: #0b3a6a;
+  --color-navy-deep: #072544;
+  --color-brand: #1a6bb0;
+  --color-primary: #0b4f8c;
+  --color-primary-foreground: #f7fbff;
+  --color-bg: #eef3f8;
+  --color-surface: #ffffff;
+  --color-fg: #122033;
+  --color-muted: #5c6d80;
+  --color-border: #d5e0ea;
+  --color-ring: #1a6bb0;
+  --color-stop: #2b7de9;
+  --color-work: #e8941a;
+  --color-closed: #e24b4a;
+  --color-alt: #2e9e5b;
+  --color-report: #2e9e5b;
+  --color-card: #ffffff;
+  --color-background: #eef3f8;
+  --color-foreground: #122033;
+  --color-muted-foreground: #5c6d80;
+  --color-accent: #1a6bb0;
+  --color-accent-foreground: #f7fbff;
+  --color-destructive: #e24b4a;
+  --color-map: #d9e4ee;
+  --radius: 0.75rem;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --shadow-border:
+    0 0 0 1px rgb(18 32 51 / 0.06), 0 1px 2px -1px rgb(18 32 51 / 0.06),
+    0 2px 8px rgb(18 32 51 / 0.05);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    outline: 1px solid rgb(18 32 51 / 0.1);
+    outline-offset: -1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-map);
+  z-index: 0;
+}
+
+.leaflet-container img {
+  max-width: none;
+}
+
+.leaflet-control {
+  z-index: 1;
+}
+
+.leaflet-div-icon {
+  background: transparent;
+  border: none;
+}
+
+.leaflet-tooltip.map-label {
+  background: var(--color-surface);
+  color: var(--color-fg);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow-border);
+  padding: 6px 10px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.leaflet-tooltip.map-label::before {
+  display: none;
+}
+
+.leaflet-tooltip.map-label-work {
+  color: var(--color-work);
+}
+
+.map-pin {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 2px solid white;
+  box-shadow: 0 4px 12px rgb(7 37 68 / 0.28);
+}
+
+.map-pin svg {
+  width: 16px;
+  height: 16px;
+}
+
+.map-pin-stop {
+  background: var(--color-stop);
+}
+
+.map-pin-work {
+  background: var(--color-work);
+}
+
+.map-pin-closed {
+  background: var(--color-closed);
+  border-radius: 8px;
+}
+
+.map-pin-report {
+  background: var(--color-report);
+}
+
+.map-pin-selected {
+  width: 42px;
+  height: 42px;
+  box-shadow: 0 0 0 4px rgb(26 107 176 / 0.28), 0 6px 16px rgb(7 37 68 / 0.3);
+}
+
+.map-pin-selected svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  opacity: 0.45;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
