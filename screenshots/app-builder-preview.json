@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Trujillo Conecta",
+      "hasCanvas": false,
+      "bodyTextLen": 534,
+      "bodyTextHash": "ed755718d7d222ffa7ace01239521ba31932d2aa84c852d216cb194e589ac581",
+      "bodyTextPrefix": "TRUJILLO CONECTA Inicio Mapa Obras Transporte Reportes TRUJILLO ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Trujillo Conecta",
+      "hasCanvas": false,
+      "bodyTextLen": 228,
+      "bodyTextHash": "1b78bb6d5601e851aadb73b1c231b3a4a6389972828d30752775ae818d3b6e90",
+      "bodyTextPrefix": "TRUJILLO CONECTA Cargando mapa de Trujillo… Paraderos y transpor",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
